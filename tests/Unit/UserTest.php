@@ -17,12 +17,24 @@ class UserTest extends TestCase
     public function testAddUser()
     {
         $user = new User();
-        $user-> name='John Smith';
-        $user-> email='xx577@njit.edu';
-        $user-> password='catWalk';
+        $user-> name='Marge Hilton';
+        $user-> email='xx5712@njit.edu';
+        $user-> password='ironBoard';
 
         $this->assertTrue($user->save());
 
+        //$this->assertTrue(true);
+
+    }
+    public function testModUser()
+    {
+        $user = User::find(1);
+
+        $user-> name='Steve Smith';
+        //$user-> email='bc123@njit.com';
+        //dd($user);
+        $this->assertTrue($user->save());
+        
         //$this->assertTrue(true);
 
     }
