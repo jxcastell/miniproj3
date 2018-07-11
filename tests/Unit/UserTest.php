@@ -13,7 +13,7 @@ class UserTest extends TestCase
      * A basic test example.
      *
      * @return void
-     */
+    */
 
     public function testAddUser()
     {
@@ -49,5 +49,12 @@ class UserTest extends TestCase
 
         //$this->assertTrue(true);
 
+    }
+
+    public function testCountUser()
+    {
+        $users = User::all();
+        echo 'Rows in the Users database: '.$users -> count();
+        $this->assertTrue(true);
     }
 }
