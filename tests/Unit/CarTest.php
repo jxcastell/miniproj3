@@ -16,12 +16,24 @@ class CarTest extends TestCase
      */
     public function testAddCar()
     {
-        $user = new Car();
-        $user-> make='Ford';
-        $user-> model='Escape';
-        $user-> year='2018';
+        $car = new Car();
+        $car-> make='Ford';
+        $car-> model='Escape';
+        $car-> year='2018';
 
-        $this->assertTrue($user->save());
+        $this->assertTrue($car->save());
        // $this->assertTrue(true);
     }
+    public function testModCar()
+    {
+
+
+        $car = Car::find(7);
+
+        $car-> year='2000';
+
+        $this->assertTrue($car->save());
+    }
+
+
 }
