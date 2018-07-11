@@ -27,3 +27,4 @@ Route::get('/contact',function() {
 */
 
 Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/about', 'PagesController@about')->name('about');

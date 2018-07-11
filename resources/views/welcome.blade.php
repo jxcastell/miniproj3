@@ -71,6 +71,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                         <a class="navbar-brand" href="{{ Route('contact') }}">Contact</a>
+                        <a class="navbar-brand" href="{{ Route('about') }}">About</a>
 
                     @else
                         <a href="{{ route('login') }}">Login</a>
