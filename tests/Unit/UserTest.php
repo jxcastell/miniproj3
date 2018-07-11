@@ -14,27 +14,39 @@ class UserTest extends TestCase
      *
      * @return void
      */
+
     public function testAddUser()
     {
         $user = new User();
-        $user-> name='Marge Hilton';
-        $user-> email='xx5712@njit.edu';
-        $user-> password='ironBoard';
+        $user-> name='susan Porch';
+        $user-> email='xx5721@njit.edu';
+        $user-> password='susan';
 
         $this->assertTrue($user->save());
 
         //$this->assertTrue(true);
 
     }
+
     public function testModUser()
     {
-        $user = User::find(1);
+        $user = User::find(7);
 
         $user-> name='Steve Smith';
         //$user-> email='bc123@njit.com';
         //dd($user);
         $this->assertTrue($user->save());
-        
+
+        //$this->assertTrue(true);
+
+    }
+    public function testDelUser()
+    {
+        $user = User::find(20);
+
+
+        $this->assertTrue($user->delete());
+
         //$this->assertTrue(true);
 
     }
