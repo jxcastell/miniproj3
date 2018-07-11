@@ -18,3 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/contact', 'PageController@contact')->name('contact');
+
+/*
+Route::get('/contact',function() {
+    return view( 'pages.contact');
+})->name('contact');
+*/
+
+Route::get('/contact', 'PagesController@contact')->name('contact');

@@ -27,6 +27,10 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <!-- JC added contact page -->
+                <a class="navbar-brand" href="{{ url('/home') }}">Home</a>
+                <a class="navbar-brand" href="{{ Route('contact') }}">Contact</a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
