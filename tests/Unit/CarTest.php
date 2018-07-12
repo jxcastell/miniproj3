@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Car;
+use PHPUnit\Framework\Constraint\IsType;
 
 class CarTest extends TestCase
 {
@@ -36,9 +37,17 @@ class CarTest extends TestCase
     }
     public function testDelCar()
     {
-        $car = Car::find(26);
+        $car = Car::find(34);
 
         $this->assertTrue($car->delete());
+    }
+    public function testCountCar()
+    {
+        $cars = Car::all();
+        echo 'Rows in the Cars database: '.$cars -> count()."\n";
+        $recordCount = $cars->count();
+        $this->assertInternalType(IsType::TYPE_INT,$recordCount );
+        //$this->assertTrue(true);
     }
 
 }

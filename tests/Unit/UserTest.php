@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Constraint\IsType;
 use App\User;
 
 
@@ -19,9 +20,9 @@ class UserTest extends TestCase
     public function testAddUser()
     {
         $user = new User();
-        $user-> name='Cathy Potato';
-        $user-> email='xx5726@njit.edu';
-        $user-> password='nasus';
+        $user-> name='Cathy Petsss';
+        $user-> email='xx5730@njit.edu';
+        $user-> password='nasustyxx';
 
         $this->assertTrue($user->save());
 
@@ -43,7 +44,7 @@ class UserTest extends TestCase
     }
     public function testDelUser()
     {
-        $user = User::find(30);
+        $user = User::find(37);
 
 
         $this->assertTrue($user->delete());
@@ -55,7 +56,9 @@ class UserTest extends TestCase
     public function testCountUser()
     {
         $users = User::all();
-        echo 'Rows in the Users database: '.$users -> count();
-        $this->assertTrue(true);
+        echo 'Rows in the Users database: '.$users -> count()."\n";
+        $recordCount = $users->count();
+        $this->assertInternalType(IsType::TYPE_INT,$recordCount );
+        //$this->assertTrue(true);
     }
 }
