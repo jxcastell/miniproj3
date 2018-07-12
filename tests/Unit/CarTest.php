@@ -37,7 +37,7 @@ class CarTest extends TestCase
     }
     public function testDelCar()
     {
-        $car = Car::find(11);
+        $car = Car::find(12);
 
         $this->assertTrue($car->delete());
     }
@@ -56,11 +56,19 @@ class CarTest extends TestCase
         echo "Year is: ".$year."\n";
         //dd($car);
         //$this->assertInstanceOf('int', $year);
-       // $this->assertTrue(is_int(50));
-       // $car->assertInstanceOf('int', year);
-        /* I had to go with a string test, faker dates returns strings. */
+        // $this->assertTrue(is_int(50));
+        // $car->assertInstanceOf('int', year);
+        // I had to go with a string test, faker dates returns strings.
         $this->assertTrue(is_string($year));
 
+    }
+
+    public function testModelCar()
+    {
+        $car = Car::find(20);
+        $make = $car->make;
+        echo "Make is: ".$make."\n";
+        $this->assertContains($make, ['Ford', 'Honda', 'Toyota']);
     }
 
 }
