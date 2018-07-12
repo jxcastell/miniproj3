@@ -20,7 +20,7 @@ class CarTest extends TestCase
         $car = new Car();
         $car-> make='Ford';
         $car-> model='Escape';
-        $car-> year='2018';
+        $car-> year=2018;
 
         $this->assertTrue($car->save());
        // $this->assertTrue(true);
@@ -29,7 +29,7 @@ class CarTest extends TestCase
     {
 
 
-        $car = Car::find(7);
+        $car = Car::find(10);
 
         $car-> year='2000';
 
@@ -37,7 +37,7 @@ class CarTest extends TestCase
     }
     public function testDelCar()
     {
-        $car = Car::find(34);
+        $car = Car::find(11);
 
         $this->assertTrue($car->delete());
     }
@@ -48,6 +48,19 @@ class CarTest extends TestCase
         $recordCount = $cars->count();
         $this->assertInternalType(IsType::TYPE_INT,$recordCount );
         //$this->assertTrue(true);
+    }
+    public function testYearCar()
+    {
+        $car = Car::find(20);
+        $year = $car->year;
+        echo "Year is: ".$year."\n";
+        //dd($car);
+        //$this->assertInstanceOf('int', $year);
+       // $this->assertTrue(is_int(50));
+       // $car->assertInstanceOf('int', year);
+        /* I had to go with a string test, faker dates returns strings. */
+        $this->assertTrue(is_string($year));
+
     }
 
 }

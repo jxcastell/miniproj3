@@ -20,9 +20,9 @@ class UserTest extends TestCase
     public function testAddUser()
     {
         $user = new User();
-        $user-> name='Cathy Petsss';
-        $user-> email='xx5730@njit.edu';
-        $user-> password='nasustyxx';
+        $user-> name='Bets Pets';
+        $user-> email='xx5740@njit.edu';
+        $user-> password='naaasyyxx';
 
         $this->assertTrue($user->save());
 
@@ -44,7 +44,7 @@ class UserTest extends TestCase
     }
     public function testDelUser()
     {
-        $user = User::find(37);
+        $user = User::find(23);
 
 
         $this->assertTrue($user->delete());
