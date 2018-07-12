@@ -37,7 +37,7 @@ class CarTest extends TestCase
     }
     public function testDelCar()
     {
-        $car = Car::find(12);
+        $car = Car::find(14);
 
         $this->assertTrue($car->delete());
     }
@@ -69,6 +69,12 @@ class CarTest extends TestCase
         $make = $car->make;
         echo "Make is: ".$make."\n";
         $this->assertContains($make, ['Ford', 'Honda', 'Toyota']);
+    }
+    public function testModelStringCar()
+    {
+        $car = Car::find(20);
+        $model = $car->model;
+        $this->assertTrue(is_string($model));
     }
 
 }
